@@ -6,8 +6,13 @@
   <meta name="description" content="WebGIS ติดตามระดับน้ำและอัตราการไหลของสถานีในลุ่มน้ำวัง">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./source-banner.css">
 </head>
 <body>
+  <div class="source-banner">
+    <div><span>แหล่งข้อมูล:</span> <a href="https://www.hydro-1.net/index1.html" target="_blank" rel="noreferrer">ศูนย์อุทกวิทยาชลประทานภาคเหนือตอนบน กรมชลประทาน ↗</a></div>
+    <strong>⚠ กรุณากด “อัปเดตทุกสถานี” ทุกครั้ง เพื่อรับข้อมูลล่าสุดก่อนติดตามสถานการณ์</strong>
+  </div>
   <header><div><small>ระบบติดตามสถานการณ์น้ำ · ลุ่มน้ำวัง</small><h1>แผนที่ระดับน้ำแม่น้ำวัง</h1></div>
     <div class="controls"><label>วันที่ <input id="date" type="date"></label><button id="refresh">↻ อัปเดตทุกสถานี</button></div>
   </header>

@@ -1,0 +1,4 @@
+.source-banner{min-height:48px;padding:8px clamp(18px,4vw,60px);display:flex;align-items:center;justify-content:space-between;gap:18px;color:#d9f1f7;background:#042f4b;font-size:11px}
+.source-banner div{display:flex;align-items:center;gap:5px}.source-banner span{color:#8fcbd9}.source-banner a{color:#fff;font-weight:700;text-decoration:none}.source-banner a:hover{text-decoration:underline}
+.source-banner strong{padding:6px 10px;border:1px solid #fbbf2466;border-radius:8px;color:#fff3c4;background:#854d0e66;font-size:10px}
+@media(max-width:760px){.source-banner{align-items:stretch;flex-direction:column;gap:6px}.source-banner div{display:block;line-height:1.6}.source-banner strong{text-align:center}}
