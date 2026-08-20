@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="./styles.css">
   <link rel="stylesheet" href="./source-banner.css">
+  <link rel="stylesheet" href="./thresholds.css">
 </head>
 <body>
   <div class="source-banner">
@@ -20,12 +21,13 @@
     <aside class="stations"><div class="aside-head"><div><b>สถานีวัดน้ำในลุ่มน้ำ</b><span id="count"></span></div><button id="toggle-all">ซ่อนทั้งหมด</button></div>
       <input id="search" placeholder="ค้นหาสถานี…"><div id="station-list"></div>
     </aside>
-    <section class="map-wrap"><div id="map"></div><div class="legend"><b>สถานะ</b><span><i class="normal"></i>ปกติ</span><span><i class="watch"></i>เฝ้าระวัง</span><span><i class="danger"></i>เฝ้าระวังสูง</span><span><i class="missing"></i>ไม่มีข้อมูล</span></div></section>
+    <section class="map-wrap"><div id="map"></div><div class="legend"><b>สถานะเทียบระดับตลิ่ง</b><span><i class="normal"></i>ต่ำกว่าเกณฑ์</span><span><i class="watch"></i>ใกล้ถึงตลิ่ง/เฝ้าระวัง</span><span><i class="danger"></i>ถึงหรือเกินตลิ่ง</span><span><i class="unverified"></i>ยังไม่มีเกณฑ์ยืนยัน</span><span><i class="missing"></i>ไม่มีข้อมูลระดับน้ำ</span></div></section>
     <aside class="details"><div id="sync">พร้อมดึงข้อมูล 14 สถานี</div><article><div class="title-row"><div><b id="station-id">W.1C</b><h2 id="station-name"></h2><small id="station-meta"></small></div><span id="status">ไม่มีข้อมูล</span></div>
       <div class="metrics"><div><small>ระดับน้ำล่าสุด</small><strong id="level">—</strong></div><div><small>อัตราการไหล</small><strong id="flow">—</strong></div></div>
+      <section class="threshold-card"><div><small>ระดับถึงตลิ่ง</small><strong id="bankfull">—</strong></div><div><small>ที่มาของเกณฑ์</small><b id="threshold-type">ยังไม่มีข้อมูลยืนยัน</b></div><p id="threshold-note"></p><a id="threshold-source" target="_blank" rel="noreferrer">ตรวจสอบแหล่งข้อมูล ↗</a></section>
       <div class="chart-title"><b>แนวโน้ม 24 ชั่วโมง</b><small id="reading-count"></small></div><div id="chart"></div><div class="axis"><span>01:00</span><span>12:00</span><span>24:00</span></div>
     </article><section class="coverage"><div><small>สถานีทั้งหมด</small><b>14</b></div><div><small>มีข้อมูล</small><b id="ok-count">0</b></div><div><small>พิกัดยืนยันแล้ว</small><b>14</b></div></section>
-    <p class="notice"><b>หมายเหตุ:</b> ข้อมูลใช้สนับสนุนการติดตามสถานการณ์ ไม่ใช่ประกาศเตือนภัยอย่างเป็นทางการ</p></aside>
+    <p class="notice"><b>คำเตือน:</b> ข้อมูลนี้ใช้สนับสนุนการเฝ้าระวังเท่านั้น ไม่ใช่ประกาศเตือนภัยอย่างเป็นทางการ เกณฑ์ที่ระบุว่า “คำนวณจากทะเบียนสถานี” เป็นค่าประมาณจากระดับตลิ่งลบระดับศูนย์เสา และใช้สีส้มเมื่อเหลือไม่เกิน 1.00 ม. ถึงตลิ่งเพื่อช่วยติดตาม ซึ่งไม่ใช่เกณฑ์ของหน่วยงาน สภาพลำน้ำอาจเปลี่ยนแปลง โปรดกด “อัปเดตทุกสถานี” และตรวจสอบประกาศจากกรมชลประทานหรือหน่วยงานท้องถิ่นทุกครั้ง</p></aside>
   </main>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="./app.js"></script>
